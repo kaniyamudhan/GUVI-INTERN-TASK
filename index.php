@@ -16,7 +16,7 @@
    session_start();
    
    if($_SERVER["REQUEST_METHOD"] == "POST") {
-      // username and password sent from form 
+  
       
       $myusername = mysqli_real_escape_string($db,$_POST['EMAIL']);
       $mypassword = mysqli_real_escape_string($db,$_POST['PASS']); 
@@ -28,15 +28,14 @@
       
       $count = mysqli_num_rows($result);
       
-      // If result matched $myusername and $mypassword, table row must be 1 row
+
 		
       if ($count == 1) {
         // Valid login credentials
         $_SESSION['loggedin'] = TRUE;
         $_SESSION['login_user'] = $myusername;
         
-        // Redirect to the dashboard or wherever you want
-        
+
       
 echo "<script>alert('Login Successful');window.location.href='dash.php';</script>";
 
