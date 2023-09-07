@@ -9,7 +9,6 @@ if ($mysqli->connect_error) {
     die('Connect Error (' . $mysqli->connect_errno . ') ' . $mysqli->connect_error);
 }
 session_start();
-// If the user is not logged in redirect to the login page...
 if (!isset($_SESSION['loggedin'])) 
 {
 	header('Location:index.php');
@@ -19,7 +18,7 @@ else
 {
 	$s=$_SESSION['login_user'];
 }
-// Handle form submission for editing and saving
+
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $uname = $_POST['uname'];
     $email = $_POST['email'];
@@ -27,16 +26,16 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $ph = $_POST['ph'];
     $dob = $_POST['dob'];
 
-    // Update the data in the database
+
     $updateQuery = "UPDATE register SET uname='$uname', pass='$pass', ph='$ph', dob='$dob' WHERE email='$email'";
     if ($mysqli->query($updateQuery)) {
-        // Redirect back to the profile page after saving
+      
         header("Location: dash.php");
         exit();
     }
 
 }?><?php
-// SQL query to select data from database
+
 $sql = "SELECT * FROM register where email='$s'";
 $result = $mysqli->query($sql);
 //$rows=$result;
@@ -54,8 +53,6 @@ $mysqli->close();
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <title>GUVI-TASK</title>
 <link rel="icon" href="guvi15.png" type="image/x-icon">
-
-<!--<link rel="stylesheet" type="text/css" href="dash.scss">-->
 <link rel="stylesheet" type="text/css" href="dash.css">
 </head>
 <body>
@@ -150,31 +147,29 @@ $mysqli->close();
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script>
     $(document).ready(function() {
-    // When the "Edit Profile" button is clicked
+
     $('#editProfileButton').click(function() {
-        // Toggle visibility of the profile and edit sections
+        
         $('#profileSection').toggle();
         $('#editSection').toggle();
     });
 });
 
 $(document).ready(function() {
-    // Attach a submit event handler to the form
+   
     $('#profileForm').submit(function(e) {
-        e.preventDefault(); // Prevent the form from submitting normally
+        e.preventDefault(); 
 
-        // Perform an AJAX request to update the data
+       
         $.ajax({
-            url: 'dash.php', // Replace with the URL that handles the update
+            url: 'dash.php', 
             method: 'POST',
-            data: $('#profileForm').serialize(), // Serialize the form data
+            data: $('#profileForm').serialize(),
             success: function(response) {
-                // Update the content on the page if needed
-                // For example, you can update a success message or indicate that the update was successful
-                $('#saveButton').text('Saved'); // Change the button text
+                $('#saveButton').text('Saved');
             },
             error: function(xhr, status, error) {
-                // Handle errors if necessary
+           
                 console.error(error);
             }
         });
