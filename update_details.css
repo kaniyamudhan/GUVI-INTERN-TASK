@@ -1,0 +1,213 @@
+
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: yellow;
+    overflow-x: hidden;
+}
+
+/* Navigation bar styles */
+.sidenav {
+    height: 100%;
+    width: 0px; /* Adjust the width as needed */
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: #078140;
+    overflow-x: hidden;
+    transition: 0.5s;
+    padding-top: 60px;
+}
+
+.sidenav a {
+    padding: 15px 25px;
+    text-decoration: none;
+    font-size: 18px;
+    color: white;
+    display: block;
+    transition: 0.3s;
+}
+
+.sidenav a:hover {
+    color: #faee05;
+}
+
+/* Close button styles */
+.closebtn {
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding: 15px;
+}
+
+/* Button to open the side navigation bar */
+#openNavBtn {
+    position: absolute;
+    top: 20px;
+    left: -20px; /* Adjust the left position as needed */
+    cursor: pointer;
+    color: #006600;
+    padding: 0; /* Remove padding */
+    margin: 0; /* Remove margin */
+}
+
+/* Main content area */
+#main {
+    transition: margin-left .5s;
+    padding: 16px;
+    margin-left: 0;
+}
+
+/* Profile picture styles */
+.image-profile {
+    border: 3px solid green;
+    object-fit: cover;
+    height: 150px;
+    width: 150px;
+    margin: auto; /* Center the image */
+    display: block; /* Remove any default spacing */
+}
+
+/* Profile card styles */
+.profile-card {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+    width: 100%;
+    max-width: 350px; /* Limit the width for mobile view */
+   margin: 10px auto; /* Center the card */
+}
+
+/* Center the profile card in mobile view */
+
+
+/* Table styles */
+
+
+
+@media (max-width: 768px) {
+    .profile-card {
+        margin: 20px auto;
+    }
+}
+
+
+
+/* Button styles */
+.btn-container {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.edit-btn,
+.save-btn {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 16px;
+    color: #fff;
+    transition: background-color 0.3s ease-in-out;
+}
+
+.edit-btn {
+    background-color: #006600;
+}
+
+.save-btn {
+    background-color: #4caf50;
+}
+
+.edit-btn:hover,
+.save-btn:hover {
+    background-color: #004d00;
+}
+
+/* Center the container in mobile view */
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+    }
+}
+#openNavBtn {
+    padding-left: 40px;
+}
+.navbar {
+    background-color: yellow;
+    position: fixed;
+    top: 0;
+    left: -250px;
+    height: 100%;
+    width: 250px;
+    transition: 0.5s;
+}
+
+.navbar.active {
+    left: 0;
+}
+
+.navbar-content {
+    padding: 20px;
+}
+
+/* Style for the menu icon */
+#menu-icon {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    cursor: pointer;
+    font-size: 24px;
+    color: #333;
+}
+
+/* Style for the close icon */
+#close-icon {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    cursor: pointer;
+    font-size: 24px;
+    color: #333;
+}
+
+
+/* Reduce the height of the buttons */
+.edit-btn,
+.save-btn {
+    padding: 8px 16px; /* Reduce the padding to make the buttons shorter */
+    font-size: 14px; /* You can adjust the font size as needed */
+}
+.logout-button {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background-color: #ff0000;
+    color: #fff;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+
+.rounded-input {
+    width: 100% !important; /* You can adjust the width as needed */
+    padding: 10px; /* Reduce the padding to make the input boxes shorter */
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    outline: none;
+    transition: border-color 0.3s ease-in-out;
+   /* You can adjust the font size as needed */
+}
+
+.rounded-input:focus {
+    border-color: #006600;
+}
