@@ -1,4 +1,4 @@
-/* Reset some default styles and set the background color to yellow */
+
 body {
     font-family: Arial, sans-serif;
     margin: 0;
@@ -6,10 +6,10 @@ body {
     background-color: yellow;
 }
 
-/* Navigation bar styles */
+
 .sidenav {
     height: 100%;
-    width: 0px; /* Adjust the width as needed */
+    width: 0px; 
     position: fixed;
     z-index: 1;
     top: 0;
@@ -33,7 +33,7 @@ body {
     color: #faee05;
 }
 
-/* Close button styles */
+
 .closebtn {
     position: absolute;
     top: 0;
@@ -41,33 +41,33 @@ body {
     padding: 15px;
 }
 
-/* Button to open the side navigation bar */
+
 #openNavBtn {
     position: absolute;
     top: 20px;
-    left: -20px; /* Adjust the left position as needed */
+    left: -20px; 
     cursor: pointer;
     color: #006600;
-    padding: 0; /* Remove padding */
-    margin: 0; /* Remove margin */
+    padding: 0; 
+    margin: 0;
 }
 
 
-/* Main content area */
+
 #main {
     transition: margin-left .5s;
     padding: 16px;
     margin-left: 0;
 }
 
-/* Profile picture styles */
+
 .image-profile {
     border: 3px solid green;
     object-fit: cover;
     height: 150px;
     width: 150px;
-    margin: auto; /* Center the image */
-    display: block; /* Remove any default spacing */
+    margin: auto; 
+    display: block; 
 }
 .profile-card {
     background-color: #fff;
@@ -75,24 +75,17 @@ body {
     border-radius: 10px;
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
     width: 100%;
-    max-width: 350px; /* Limit the width for mobile view */
-   margin: 10px auto; /* Center the card */
+    max-width: 350px;
+   margin: 10px auto; 
 }
 
 
-/* Center the profile card in mobile view */
+
 @media (max-width: 768px) {
     .profile-card {
         margin: 20px auto;
     }
 }
-
-/* Table styles */
-
-
-/* Rounded input fields */
-
-/* Button styles */
 .btn-container {
     text-align: center;
     margin-top: 20px;
@@ -121,8 +114,6 @@ body {
 .save-btn:hover {
     background-color: #004d00;
 }
-
-/* Center the container in mobile view */
 @media (max-width: 768px) {
     .container {
         flex-direction: column;
@@ -151,8 +142,6 @@ body {
 .navbar-content {
     padding: 20px;
 }
-
-/* Style for the menu icon */
 #menu-icon {
     position: absolute;
     top: 20px;
@@ -161,8 +150,6 @@ body {
     font-size: 24px;
     color: #333;
 }
-
-/* Style for the close icon */
 #close-icon {
     position: absolute;
     top: 20px;
@@ -183,8 +170,6 @@ body {
     cursor: pointer;
     text-decoration: none;
 }
-/* Add space between username and name in table */
-/* Add space between the "Username" label and "uname" */
 .table-container th {
     text-align: left;
     font-weight: bold;
