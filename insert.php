@@ -25,7 +25,7 @@ if (isset($_POST['reg']))
 			  
 		if ($db->query($query) === TRUE) 
 			{	
-		// echo "<script>alert('Registration Successful');window.location.href='index.php';</script>";
+	
 	?>
 			<script>
 
