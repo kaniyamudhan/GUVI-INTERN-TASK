@@ -8,38 +8,22 @@
     <script src="jquery-3.3.1.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/11.4.24/sweetalert2.all.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/11.4.24/sweetalert2.min.css">
-
-
-
 <?php
    include("config.php");
    session_start();
-   
    if($_SERVER["REQUEST_METHOD"] == "POST") {
-  
-      
       $myusername = mysqli_real_escape_string($db,$_POST['EMAIL']);
       $mypassword = mysqli_real_escape_string($db,$_POST['PASS']); 
-      
       $sql = "SELECT * FROM register WHERE email = '$myusername' and pass = '$mypassword'";
       $result = mysqli_query($db,$sql);
       $row = mysqli_fetch_array($result,MYSQLI_ASSOC);
       //$active = $row['active'];
       
       $count = mysqli_num_rows($result);
-      
-
-		
       if ($count == 1) {
-        // Valid login credentials
         $_SESSION['loggedin'] = TRUE;
         $_SESSION['login_user'] = $myusername;
-        
-
-      
 echo "<script>alert('Login Successful');window.location.href='dash.php';</script>";
-
-
 exit();
       }
 	  else
@@ -285,17 +269,11 @@ section .container.active .signinBx .imgBx {
       </div>
     </div>
   </section>
-
-
-
   <script>
   const toggleForm = () => {
   const container = document.querySelector('.container');
   container.classList.toggle('active');};
   </script>
-
-
-
 </body>
 
 </html>
