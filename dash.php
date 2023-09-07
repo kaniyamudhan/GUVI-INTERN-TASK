@@ -107,29 +107,18 @@ $mysqli->close();
     <td style="color:black";>
     <div class="password-input-container">
     <?php echo $p['pass']; ?>
-    
 </div>
-
     </td>
 </tr>
-
-
 <tr>
     <th class="fw-normal">Contact:</th>
     <td style="color:black";><?php echo $p['ph']; ?>
 </tr>
-
-
-                        
                         <tr>
                             <th class="fw-normal">DOB:</th>
                             <td style="color:black";><?php echo $p['dob']; ?></td>
                         </tr>
-                        <tr>
-                           
-                                
-                                
-                                
+                        <tr>   
                             </td>
                         </tr>
                        <?php }
@@ -178,53 +167,47 @@ $(document).ready(function() {
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script>
     $(document).ready(function() {
-    // When the "Edit Profile" button is clicked
     $('#editProfileButton').click(function() {
-        // Toggle visibility of the profile and edit sections
         $('#profileSection').toggle();
         $('#editSection').toggle();
     });
 });
 
 $(document).ready(function() {
-    // Attach a submit event handler to the form
     $('#profileForm').submit(function(e) {
-        e.preventDefault(); // Prevent the form from submitting normally
-
-        // Perform an AJAX request to update the data
+        e.preventDefault();
         $.ajax({
-            url: 'dash.php', // Replace with the URL that handles the update
+            url: 'dash.php',
             method: 'POST',
-            data: $('#profileForm').serialize(), // Serialize the form data
+            data: $('#profileForm').serialize(),
             success: function(response) {
-                // Update the content on the page if needed
-                // For example, you can update a success message or indicate that the update was successful
-                $('#saveButton').text('Saved'); // Change the button text
+             
+                $('#saveButton').text('Saved'); 
             },
             error: function(xhr, status, error) {
-                // Handle errors if necessary
+       
                 console.error(error);
             }
         });
     });
 });
 $(document).ready(function() {
-    // Attach a click event to the logout button
+
     $('#logoutButton').click(function() {
-        // Send an AJAX request to the logout endpoint
+ 
         $.ajax({
-            url: 'logout.php', // Replace with your logout endpoint
-            method: 'POST',    // Use POST or GET based on your backend setup
+            url: 'logout.php', 
+            method: 'POST',   
             success: function(response) {
-                // Redirect to the login page or perform other actions
-                window.location.href = 'index.php'; // Replace with your login page
+                
+                window.location.href = 'index.php'; 
             },
             error: function(xhr, status, error) {
                 console.error(error);
             }
         });
     });
-});// JavaScript to toggle the side navigation bar
+});
 document.getElementById('openNavBtn').addEventListener('click', function() {
     toggleNav();
 });
@@ -232,8 +215,6 @@ document.getElementById('openNavBtn').addEventListener('click', function() {
 document.getElementById('closeNavBtn').addEventListener('click', function() {
     toggleNav();
 });
-
-// Function to toggle the navigation bar
 function toggleNav() {
     var sideNav = document.getElementById('mySidenav');
     var mainContent = document.getElementById('main');
